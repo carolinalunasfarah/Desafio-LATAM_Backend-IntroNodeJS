@@ -30,4 +30,12 @@ const update = (id, name, age, type, color, illness) => {
     console.log("You successfully update information");
 };
 
-module.exports = { register, read, update };
+// Erase
+const erase = (id) => {
+    const index = appointmentsParse.findIndex((e) => e.id === id);
+    appointmentsParse.splice(index, 1);
+    console.log(appointmentsParse);
+    fs.writeFileSync("appointments.json", JSON.stringify(appointmentsParse));
+}
+
+module.exports = { register, read, update, erase };
