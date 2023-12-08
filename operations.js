@@ -36,6 +36,6 @@ const erase = (id) => {
     appointmentsParse.splice(index, 1);
     console.log(appointmentsParse);
     fs.writeFileSync("appointments.json", JSON.stringify(appointmentsParse));
-}
+};
 
 module.exports = { register, read, update, erase };
