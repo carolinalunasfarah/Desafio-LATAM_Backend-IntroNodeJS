@@ -4,6 +4,7 @@ const fs = require("fs");
 const fileContent = fs.readFileSync("appointments.json", "utf8");
 const appointmentsParse = JSON.parse(fileContent);
 
+// Register
 const register = (name, age, type, color, illness) => {
     if (!name || !age || !type || !color || !illness) {
         console.log("Please enter all require data");
@@ -11,7 +12,12 @@ const register = (name, age, type, color, illness) => {
     }
     appointmentsParse.push({ name, age, type, color, illness });
     fs.writeFileSync("appointments.json", JSON.stringify(appointmentsParse));
-    console.log(appointmentsParse);
+    // console.log(appointmentsParse);
 };
 
-module.exports = { register };
+// Read
+const read = () => {
+    console.log(appointmentsParse)
+};
+
+module.exports = { register, read };

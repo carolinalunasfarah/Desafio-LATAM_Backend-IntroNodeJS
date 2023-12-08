@@ -5,5 +5,12 @@
         "type": "perro",
         "color": "blanco",
         "illness": "vomitos"
+    },
+    {
+        "name": "blanca",
+        "age": "3 años",
+        "type": "gato",
+        "color": "naranjo",
+        "illness": "moquillo"
     }
 ]
