@@ -22,4 +22,12 @@ const read = () => {
     console.log(appointmentsParse);
 };
 
-module.exports = { register, read };
+// Update
+const update = (id, name, age, type, color, illness) => {
+    const index = appointmentsParse.findIndex((e) => e.id === id);
+    appointmentsParse[index] = { id, name, age, type, color, illness };
+    fs.writeFileSync("appointments.json", JSON.stringify(appointmentsParse));
+    console.log("You successfully update information");
+};
+
+module.exports = { register, read, update };
